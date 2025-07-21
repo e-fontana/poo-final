@@ -1,27 +1,31 @@
+# Eduardo Lazarini Fontana
+# Joao Victor Marques Kishimoto
+
 from typing import Final
-from corrida import Corrida
 
 class Cliente:
     def __init__(self, nome_completo: str, telefone: str, cpf: str):
         self.__nome_completo = nome_completo
         self.__telefone = telefone
         self.__cpf: Final = cpf
-        self.__historico_corridas = []
     
-    def get_nome(self):
+    @property
+    def nome(self):
         return self.__nome_completo
     
-    def get_telefone(self):
+    @property
+    def telefone(self):
         return self.__telefone
     
-    def get_cpf(self):
+    @property
+    def cpf(self):
         return self.__cpf
 
-    def set_nome(self, nome):
+    @nome.setter
+    def nome(self, nome):
         self.__nome_completo = nome
-    
-    def set_telefone(self, telefone):
+
+    @telefone.setter
+    def telefone(self, telefone):
         self.__telefone = telefone
 
-    def add_corrida(self, corrida):
-        self.__historico_corridas.append(corrida);

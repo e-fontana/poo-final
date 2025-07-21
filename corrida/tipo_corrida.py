@@ -1,3 +1,6 @@
+# Eduardo Lazarini Fontana
+# Joao Victor Marques Kishimoto
+
 from enum import Enum
 
 class TipoCorrida(Enum):
