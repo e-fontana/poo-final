@@ -1,9 +1,13 @@
+# Eduardo Lazarini Fontana
+# Joao Victor Marques Kishimoto
+
 from corrida import Corrida
 from corrida.tipo_corrida import TipoCorrida
 from endereco.rota import Rota
+from cliente import Cliente
 
 class Carona(Corrida):
-    def __init__(self, id: str, cliente, valorOferecidoPorKm: float, rota: Rota) -> None:
+    def __init__(self, id: str, cliente: Cliente, valorOferecidoPorKm: float, rota: Rota) -> None:
         super().__init__(id, cliente, TipoCorrida.CARONA, rota)
         self.__valorOferecidoPorKm = valorOferecidoPorKm
 
