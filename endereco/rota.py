@@ -1,3 +1,6 @@
+# Eduardo Lazarini Fontana
+# Joao Victor Marques Kishimoto
+
 from endereco.endereco import Endereco
 
 class Rota:

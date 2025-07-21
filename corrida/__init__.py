@@ -1,3 +1,6 @@
+# Eduardo Lazarini Fontana
+# Joao Victor Marques Kishimoto
+
 from typing import Any, Final
 from abc import ABC, abstractmethod
 
@@ -6,7 +9,7 @@ from cliente import Cliente
 from endereco.rota import Rota
 
 class Corrida(ABC):
-    def __init__(self, id: str, cliente, tipo: TipoCorrida, rota: Rota) -> None:
+    def __init__(self, id: str, cliente: Cliente, tipo: TipoCorrida, rota: Rota) -> None:
         self._id: Final = id
         self._cliente = cliente
         self._tipo = tipo

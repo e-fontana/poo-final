@@ -1,3 +1,6 @@
+# Eduardo Lazarini Fontana
+# Joao Victor Marques Kishimoto
+
 class Endereco:
     def __init__(self, nome, rua, numero, bairro):
         self.__nome = nome

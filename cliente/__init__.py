@@ -1,5 +1,7 @@
+# Eduardo Lazarini Fontana
+# Joao Victor Marques Kishimoto
+
 from typing import Final
-from corrida import Corrida
 
 class Cliente:
     def __init__(self, nome_completo: str, telefone: str, cpf: str):
