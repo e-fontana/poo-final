@@ -4,7 +4,7 @@
 from typing import Any, Final
 from abc import ABC, abstractmethod
 
-from tipo_corrida import TipoCorrida
+from corrida.tipo_corrida import TipoCorrida
 from cliente import Cliente
 from endereco.rota import Rota
 
@@ -14,10 +14,10 @@ class Corrida(ABC):
         self._cliente = cliente
         self._tipo = tipo
         self._rota: Rota = rota
-        self._valorTotal: float | None = None
+        self._valor_total: float | None = None
 
     def __repr__(self) -> str:
-        return f'ID: {self._id}, Nome cliente: {self.cliente.nome}, Tipo: {self.tipo}, Rota: {self.rota}, Valor Total: {self.valor_final_corrida}'
+        return f'ID: {self._id}, Nome cliente: {self.cliente.nome}, Tipo: {self.tipo}, Rota: {self.rota}, Valor Total: {self._valor_total}'
 
     def __eq__(self, value: object) -> bool:
         if not isinstance(value, Corrida):
@@ -37,8 +37,8 @@ class Corrida(ABC):
         return self._tipo
     
     @property
-    def valor_final_corrida(self):
-        return self._valorTotal
+    def valor_total(self):
+        return self._valor_total
     
     @property
     def rota(self):
@@ -52,10 +52,9 @@ class Corrida(ABC):
     def setCliente(self, cliente: Cliente):
         self._cliente = cliente
 
-    @valor_final_corrida.setter
-    def set_valor_final_corrida(self, rota: Rota):
-        pass
+    @valor_total.setter
+    def set_valor_total(self, value: float):
+        self._valorTotal = value
 
-    @abstractmethod
-    def calcular_valor_final(self, rota: Rota):
-        pass
+    def calcular_valor_total(self, rota: Rota):
+        return self.calcular_valor_total(rota)

@@ -7,9 +7,12 @@ from endereco.rota import Rota
 from cliente import Cliente
 
 class Carona(Corrida):
-    def __init__(self, id: str, cliente: Cliente, valorOferecidoPorKm: float, rota: Rota) -> None:
+    def __init__(self, id: str, cliente: Cliente, rota: Rota, valorOferecidoPorKm: float) -> None:
         super().__init__(id, cliente, TipoCorrida.CARONA, rota)
         self.__valorOferecidoPorKm = valorOferecidoPorKm
+
+    def __repr__(self):
+        return super().__repr__()
 
     @property
     def valorOferecidoPorKm(self):
@@ -23,11 +26,11 @@ class Carona(Corrida):
         self.__valorOferecidoPorKm = valor
 
     
-    def valorFinalCorrida(self, rota: Rota) -> None:
+    def calcular_valor_final(self, rota: Rota) -> None:
         if not rota.distancia:
             raise ValueError("Distancia nao definida")
 
         valorTotal = rota.distancia * self.valorOferecidoPorKm
 
-        self.valorTotal = valorTotal
+        self.set_valor_total = valorTotal
         
