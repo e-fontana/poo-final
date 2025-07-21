@@ -1,0 +1,25 @@
+from ufber import Ufber
+from corrida.entrega import Entrega
+from corrida.prolabore import Prolabore
+from corrida.carona import Carona
+from cliente import Cliente
+from endereco.endereco import Endereco
+from endereco.rota import Rota
+
+ufber = Ufber()
+
+cliente1 = Cliente('joao kishimoto', '(71) 90000-0000', '000.000.000-00')
+cliente2 = Cliente('eduardo fontana', '(71) 90000-0000', '000.000.000-00')
+
+ufba_canela = Endereco('ufba-canela', 'rua do canela', '11', 'canela')
+ufba_federacao = Endereco('ufba-federacao', 'rua da federacao', '02', 'Federacao')
+ufba_ondina = Endereco('ufba-ondina', 'rua das gordinhas', '02', 'Ondina')
+
+rota1 = Rota(ufba_canela, ufba_ondina, 1)
+rota2 = Rota(ufba_ondina, ufba_federacao, 2)
+rota3 = Rota(ufba_federacao, ufba_canela, 3)
+rota4 = Rota(ufba_federacao, ufba_ondina, 2)
+
+prolabore = Prolabore()
+carona = Carona()
+entrega = Entrega()

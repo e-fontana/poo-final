@@ -1,6 +1,5 @@
 from corrida import Corrida
-from endereco import Trajeto
-from endereco import Rota
+from endereco.tora import Rota
 from corrida import TipoCorrida
 from cliente import Cliente
 
@@ -12,10 +11,6 @@ class Ufber:
     def add_corrida(self, corrida):
         self.__historico_corridas.append(corrida)
 
-    def criar_corrida(self, id, cliente, tipo_corrida):
-        corrida = Corrida(id, cliente, tipo_corrida)
-        self.add_corrida(corrida)
-
     def comecar_corrida(self, rota, corrida):
         corrida.setRota(rota)
         corrida.calcular_valor_corrida(rota)
@@ -25,8 +20,8 @@ class Ufber:
         if corrida1 == corrida2: return True
         else: return False
 
-    def adicionar_trajeto(self, origem, destino, distancia):
-        self.__lista_trajetos.append(Trajeto(origem, destino, distancia))
+    def adicionar_rota(self, origem, destino, distancia):
+        self.__lista_rotas.append(Rota(origem, destino, distancia))
     
-    def adicionar_trajeto(self, origem, destino):
-        self.__lista_trajetos.append(Trajeto(origem, destino))
+    def adicionar_rota(self, origem, destino):
+        self.__lista_rotas.append(Rota(origem, destino))
