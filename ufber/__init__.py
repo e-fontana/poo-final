@@ -3,6 +3,8 @@
 
 from corrida import Corrida
 from endereco.rota import Rota
+from corrida import TipoCorrida
+from cliente import Cliente
 
 class Ufber:
     def __init__(self):
@@ -11,10 +13,11 @@ class Ufber:
     
     def add_corrida(self, corrida: Corrida):
         self.__historico_corridas.append(corrida)
+     
+    def comecar_corrida(self, rota, corrida):
+        corrida.setRota(rota)
+        corrida.calcular_valor_corrida(rota)
 
-    def comecar_corrida(self, rota: Rota, corrida: Corrida):
-        corrida.setRota = rota
-        corrida.calcular_valor_final(rota)
     
     def comparar_corrida(self, corrida1: Corrida, corrida2: Corrida):
         return corrida1 == corrida2
@@ -23,7 +26,8 @@ class Ufber:
         rota = Rota(origem, destino)
         rota.set_distancia = distancia
 
-        self.__lista_trajetos.append(rota)
+    def adicionar_rota(self, origem, destino, distancia):
+        self.__lista_rotas.append(Rota(origem, destino, distancia))
     
-    def adicionar_trajeto(self, origem: Rota, destino: Rota):
-        self.__lista_trajetos.append(Rota(origem, destino))
+    def adicionar_rota(self, origem, destino):
+        self.__lista_rotas.append(Rota(origem, destino))
