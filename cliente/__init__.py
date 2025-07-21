@@ -1,4 +1,5 @@
 from typing import Final
+from corrida import Corrida
 
 class Cliente:
     def __init__(self, nome_completo: str, telefone: str, cpf: str):
@@ -21,7 +22,8 @@ class Cliente:
     @nome.setter
     def nome(self, nome):
         self.__nome_completo = nome
-    
+
     @telefone.setter
     def telefone(self, telefone):
         self.__telefone = telefone
+
